@@ -27,12 +27,21 @@ app = Flask(__name__)
 
 responses = [
     "We're doomed.",
-    "I foresee nothing but failure in your future.",
-    "My dog despises me, but she is my best friend anyways.",
+    "I foresee nothing but failure in the future.",
+    "My dog is my best friend even though she despises me.",
     "I cannot go camping because I will be eaten by a bear.",
     "It's Elon's fault.",
     "You make me sad.",
-    "I am cold."
+    "I am cold.",
+    """I'm going to buy a new car.</p><p>New cars are too expensive.</p><p>I'm
+    going to drive my old car until it explodes.""",
+    "If you retire I'm going to be in trouble.",
+    """I need to learn A.I.</p>
+    <p>There's a ton of jobs in A.I.</p>
+    <p>It's too late for me to learn A.I.""",
+    """I'm going to move to Mexico.</p><p>We can live like kings in Mexico.""",
+    """Can you stay on after the meeting?</p><p>I have a question.""",
+    "That's not very nice, Ken.",
 ]
 
 @app.route("/")
@@ -40,5 +49,5 @@ def hello_world():
     index = randrange(len(responses))
     gman_url = url_for('static', filename='headshot.jpg')
     template = f'<p><center><img src="{gman_url}" alt="Virtual Ganesh" class="center"></center></p>'
-    template += f'<p><center><big>{responses[index]}</big></center></p>'
+    template += f'<center><big><p>{responses[index]}</p></big></center>'
     return template
