@@ -42,6 +42,7 @@ responses = [
     """I'm going to move to Mexico.</p><p>We can live like kings in Mexico.""",
     """Can you stay on after the meeting?</p><p>I have a question.""",
     "That's not very nice, Ken.",
+    "We are going to be millionaires !!"
 ]
 
 @app.route("/")
