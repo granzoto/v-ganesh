@@ -28,5 +28,5 @@ WORKDIR /home
 COPY ./static/* /home/static/
 COPY ./v-ganesh.py /home/
 
-EXPOSE 80
-CMD ["flask", "--app", "v-ganesh", "run", "--host=0.0.0.0", "--port=8889"]
+EXPOSE 8080
+ENTRYPOINT ["flask", "--app", "v-ganesh", "run", "--host=0.0.0.0", "--port=8080"]

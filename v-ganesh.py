@@ -19,13 +19,13 @@
 # under the License.
 #
 
+import random
 from flask import Flask
 from flask import url_for
-from random import randrange
 
 app = Flask(__name__)
 
-responses = [
+ganeshisms = [
     "We're doomed.",
     "I foresee nothing but failure in the future.",
     "My dog is my best friend even though she despises me.",
@@ -47,8 +47,8 @@ responses = [
 
 @app.route("/")
 def hello_world():
-    index = randrange(len(responses))
+    random.seed();
     gman_url = url_for('static', filename='headshot.jpg')
     template = f'<p><center><img src="{gman_url}" alt="Virtual Ganesh" class="center"></center></p>'
-    template += f'<center><big><p>{responses[index]}</p></big></center>'
+    template += f'<center><big><p>{random.choice(ganeshisms)}</p></big></center>'
     return template
